@@ -50,7 +50,6 @@ function drawCanvas(){
     ctxt.clearRect(0,0,canvas.width,canvas.height);
     ctxt.drawImage(newImage,0,0);
 
-
     ctxt.font = "bold 40px Arial";
     ctxt.textAlign = "center";
     ctxt.fillStyle = "white";
@@ -115,6 +114,23 @@ document.addEventListener("click", (e) => {
         liveInput.style.display = "none";
         activeText = null;
     }
+});
+
+
+
+let downloadBtn = document.getElementById("downloadBtn");
+
+downloadBtn.addEventListener("click", () => {
+    if (!newImage) return; // no image loaded
+
+    // Get canvas as image
+    const imageURL = canvas.toDataURL("image/png");
+
+    // Create temporary link
+    const link = document.createElement("a");
+    link.href = imageURL;
+    link.download = "meme.png"; // filename
+    link.click();
 });
 
 
