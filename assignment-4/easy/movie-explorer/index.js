@@ -108,7 +108,6 @@ async function flip(cnt, movieObj){
     let content = await arrs.json();
 
     back.innerText = `Plot: ${content["Plot"]}`;
-
     inner.style.transform = "rotateY(180deg)";
 
     setTimeout(() => {

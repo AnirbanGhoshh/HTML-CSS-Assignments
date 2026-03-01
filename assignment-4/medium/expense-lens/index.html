@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+    <div class="AddTransac" onclick="Addshow()">
+        Add
+    </div>
+
+    <div class="TransacDetails hide">
+        <input type="text" placeholder="Details" id="desc">
+        <br>
+
+        <select id="categ">
+            <option value="">Select Category</option>
+            <option value="personal">Personal</option>
+            <option value="work">Work</option>
+            <option value="others">Others</option>
+        </select>
+        <br>
+
+        <input type="number" placeholder="Amount" id="amount">
+        <br>
+
+        <button class="subBtn" onclick="showC(); Deleteshow()">
+            Submit
+        </button>
+    </div>
+
+    <h2>Total Balance: ₹<span id="balance">0</span></h2>
+
+    <div id="showcase"></div>
+
+    <canvas id="expenseChart"></canvas>
+
+</body>
+</html>
